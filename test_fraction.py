@@ -2,13 +2,13 @@ import pytest
 from fraction import Fraction
 
 
-def test_initn_values():
+def test_init_values():
     f = Fraction(3, 4)
     assert f.numerator == 3
     assert f.denominator == 4
 
 
-def test_init_non_integer_raises():
+def test_init_type_error():
     with pytest.raises(TypeError):
         Fraction(1.5, 2)
 
@@ -17,7 +17,7 @@ def test_str():
     assert str(Fraction(1, 2)) == "1/2"
 
 
-def test_eq_equivalent_fractions():
+def test_equal_fractions():
     assert Fraction(1, 2) == Fraction(2, 4)
 
 
@@ -69,3 +69,4 @@ def test_not_implemented_comparison():
     assert a.__le__(1) is NotImplemented
     assert a.__gt__(1) is NotImplemented
     assert a.__ge__(1) is NotImplemented
+
